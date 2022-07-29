@@ -1,9 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 export const loginSlice = createSlice({
-  name: "login",
+  name: "auth",
   initialState: {
     count: 100,
+    users: [
+      {
+        id: 1,
+        username: "test01",
+        password: "test1234",
+      },
+    ],
+    loggedInUser: null,
   },
   reducers: {
     increment: (state) => {
@@ -15,10 +23,14 @@ export const loginSlice = createSlice({
     incrementByAmount: (state, action) => {
       state.count += action.payload;
     },
+    login: (state, action) => {
+      state.loggedInUser = action.payload;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { increment, decrement, incrementByAmount } = loginSlice.actions;
+export const { increment, decrement, incrementByAmount, login } =
+  loginSlice.actions;
 
 export default loginSlice.reducer;

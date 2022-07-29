@@ -3,7 +3,7 @@ import loginReducer from "../reducer/loginReducer";
 
 export const store = configureStore({
   reducer: {
-    login: loginReducer,
+    auth: loginReducer,
   },
 });
 export default store;
