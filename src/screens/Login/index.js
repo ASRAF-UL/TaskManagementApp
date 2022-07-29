@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import "./index.css";
 import { login } from "../../redux/reducer/loginReducer";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -24,6 +26,7 @@ const Login = () => {
     if (payload) {
       dispatch(login(payload));
       console.log("Logged in user: ", loggedInUser);
+      navigate("/dashboard");
     } else {
       alert("Invalid credentials !!");
     }
@@ -31,7 +34,7 @@ const Login = () => {
   return (
     <div className="login">
       <form className="login__form" onSubmit={(event) => handleSubmit(event)}>
-        <h1>Login Here</h1>
+        <h1>Task Management System</h1>
         <input
           type="username"
           placeholder="Username"
