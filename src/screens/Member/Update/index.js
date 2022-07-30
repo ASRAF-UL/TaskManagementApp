@@ -26,7 +26,7 @@ const MemberUpdateForm = () => {
       );
       setAssignedTaskList(assignedTasks);
     }
-  }, [currentMember]);
+  }, [currentMember, tasks]);
 
   const handleNameChange = (event) => {
     setName(event.target.value);
