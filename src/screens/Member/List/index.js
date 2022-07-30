@@ -1,12 +1,22 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import { deleteMember } from "../../../redux/reducer/memberReducer";
 import "./index.css";
 
 const MemberList = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const { members } = useSelector((state) => state.member);
   console.log("Members: ", members);
+  const handleDelete = (id) => {
+    dispatch(
+      deleteMember({
+        id: id,
+      })
+    );
+    navigate("/members");
+  };
   return (
     <div className="container">
       <div className="task__list__head">
@@ -20,6 +30,7 @@ const MemberList = () => {
               <th>Serial</th>
               <th>Name</th>
               <th>Number of Assigned Tasks</th>
+              <th>Delete</th>
             </tr>
           </thead>
           <tbody>
@@ -38,10 +49,21 @@ const MemberList = () => {
                   <td>
                     <span>{data ? data.email : null}</span>
                   </td>
+                  <td>
+                    <button
+                      className="delete__item"
+                      onClick={() => handleDelete(data.id)}
+                    >
+                      Delete
+                    </button>
+                  </td>
                 </tr>
               ))
             ) : (
               <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
                 <td>-</td>
               </tr>
             )}

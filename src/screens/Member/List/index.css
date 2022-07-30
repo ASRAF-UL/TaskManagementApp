@@ -62,3 +62,13 @@ table th {
   text-decoration: underline;
   padding: 8px 16px;
 }
+.delete__item {
+  padding: 10px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #fff;
+  background-color: rgb(218, 17, 17);
+  outline: none;
+  border: none;
+  cursor: pointer;
+}

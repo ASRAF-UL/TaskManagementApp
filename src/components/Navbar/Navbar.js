@@ -1,13 +1,20 @@
 import React from "react";
 import task_manager from "../../assets/images/task_manager.png";
 import { MenuItems } from "./MenuItems";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 import { Button } from "../Button/Button";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../redux/reducer/loginReducer";
 
 function Navbar() {
-    const { loggedInUser } = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { loggedInUser } = useSelector((state) => state.auth);
+  const handleLogout = () => {
+    dispatch(logout());
+    navigate("/");
+  };
   return (
     <nav className="navbar__items">
       <div className="navbar__logo">
@@ -27,8 +34,10 @@ function Navbar() {
           );
         })}
       </ul>
-      <Button>Logout</Button>
-      {loggedInUser ? <h2 className="username">{loggedInUser.username}</h2> : null}
+      <Button onClick={() => handleLogout()}>Logout</Button>
+      {loggedInUser ? (
+        <h2 className="username">{loggedInUser.username}</h2>
+      ) : null}
     </nav>
   );
 }

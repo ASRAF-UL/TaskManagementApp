@@ -28,10 +28,10 @@
 .submit__button {
   padding: 17px 30px;
   margin-top: 10px;
-  background: black;
+  background-color: #3acbf7;
   border: none;
   color: white;
-  font-size: 14px;
+  font-size: 1.2rem;
   border-radius: 4px;
   cursor: pointer;
 }
