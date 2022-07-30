@@ -18,9 +18,10 @@ const TaskUpdateForm = () => {
   const currentTask = tasks.find((task) => task.id === parseInt(id));
   useEffect(() => {
     if (currentTask) {
+        console.log("Current task: ", currentTask);
       setTitle(currentTask.title);
       setDescription(currentTask.description);
-      setSelectedMember(currentTask.member.name);
+      setSelectedMember(currentTask.member ? currentTask.member.name : null);
       setCreatedAt(currentTask.created_at);
     }
   }, [currentTask]);
