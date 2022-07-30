@@ -25,10 +25,24 @@ export const memberSlice = createSlice({
     addMember: (state, action) => {
       state.members.push(action.payload);
     },
+    updateMember: (state, action) => {
+      state.members.map((member) => {
+        if (member.id === action.payload.id) {
+          member.id = action.payload.id;
+          member.name = action.payload.name;
+          member.email = action.payload.email;
+        }
+      });
+    },
+    deleteMember: (state, action) => {
+      state.members = state.members.filter(
+        (member) => member.id !== action.payload.id
+      );
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { addMember } = memberSlice.actions;
+export const { addMember, updateMember, deleteMember } = memberSlice.actions;
 
 export default memberSlice.reducer;

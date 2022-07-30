@@ -54,7 +54,7 @@ const TaskUpdateForm = () => {
   };
   return (
     <div className="container">
-      <h2>Update Task</h2>
+      <h2>Task Details</h2>
       <form className="create__form" onSubmit={(event) => handleSubmit(event)}>
         <div className="form_element">
           <label>Title: </label>

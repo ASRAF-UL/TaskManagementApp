@@ -17,6 +17,7 @@ const MemberList = () => {
         <table>
           <thead>
             <tr>
+              <th>Serial</th>
               <th>Name</th>
               <th>Number of Assigned Tasks</th>
             </tr>
@@ -24,15 +25,21 @@ const MemberList = () => {
           <tbody>
             {members.length ? (
               members.map((data, index) => (
-                  <tr key={index}>
-                    <td>
-                      <Link className="update__member" to="/update-member">{data ? data.name : null}</Link>
-                    </td>
-                    <td>
-                      <span>{data ? data.email : null}</span>
-                    </td>
-                  </tr>
-                ))
+                <tr key={index}>
+                  <td>{data ? data.id : null}</td>
+                  <td>
+                    <Link
+                      className="update__member"
+                      to={`/update-member/${data.id}`}
+                    >
+                      {data ? data.name : null}
+                    </Link>
+                  </td>
+                  <td>
+                    <span>{data ? data.email : null}</span>
+                  </td>
+                </tr>
+              ))
             ) : (
               <tr>
                 <td>-</td>

@@ -12,6 +12,7 @@ import MemberList from "./screens/Member/List";
 import TaskUpdateForm from "./screens/Tasks/Update";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import MemberUpdateForm from "./screens/Member/Update";
 
 function App() {
   const { loggedInUser } = useSelector((state) => state.auth);
@@ -27,6 +28,7 @@ function App() {
           <Route path="/tasks" element={<TaskList />} />
           <Route path="/members" element={<MemberList />} />
           <Route path="/update-task/:id" element={<TaskUpdateForm />} />
+          <Route path="/update-member/:id" element={<MemberUpdateForm />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </div>
