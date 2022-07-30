@@ -2,12 +2,12 @@ import React from "react";
 import "./Button.css";
 
 const STYLES = ["btn__primary", "btn__outline"];
-const SIZES = ["btn_medium", "btn__large"];
+const SIZES = ["btn__medium", "btn__large"];
 
 export const Button = ({
   children,
   type,
-  onCLick,
+  onClick,
   buttonStyle,
   buttonSize,
 }) => {
@@ -18,7 +18,7 @@ export const Button = ({
   return (
     <button
       className={`btn ${checkButtonStyle} ${checkButtonSize}`}
-      onClick={onclick}
+      onClick={onClick}
       type={type}
     >
       {children}

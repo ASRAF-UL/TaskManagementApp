@@ -10,7 +10,6 @@ function Navbar() {
     const { loggedInUser } = useSelector((state) => state.auth);
   return (
     <nav className="navbar__items">
-      {/* <h1 > */}
       <div className="navbar__logo">
         <img className="icon" src={task_manager} alt="logo"></img>
         <h1>Task Manager</h1>

@@ -3,7 +3,6 @@ import { createSlice } from "@reduxjs/toolkit";
 export const loginSlice = createSlice({
   name: "auth",
   initialState: {
-    count: 100,
     users: [
       {
         id: 1,

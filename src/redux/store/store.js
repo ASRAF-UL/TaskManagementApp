@@ -10,6 +10,7 @@ import {
   REGISTER,
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
+import memberReducer from "../reducer/memberReducer";
 
 const persistConfig = {
   key: "root",
@@ -17,9 +18,10 @@ const persistConfig = {
   storage,
 };
 const persistedLoginReducer = persistReducer(persistConfig, loginReducer);
+const persistedMemberReducer = persistReducer(persistConfig, memberReducer);
 
 export const store = configureStore({
-  reducer: { auth: persistedLoginReducer },
+  reducer: { auth: persistedLoginReducer, member: memberReducer },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
