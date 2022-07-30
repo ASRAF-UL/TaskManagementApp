@@ -1,0 +1,29 @@
+.footer__items {
+  position: fixed;
+  bottom: 0;
+  height: 60px;
+  background: linear-gradient(
+    90deg,
+    rgb(94, 230, 254) 0%,
+    rgb(63, 208, 252) 100%
+  );
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer__menu {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-gap: 10px;
+  list-style: none;
+  text-align: center;
+  width: 80vw;
+  justify-content: start;
+}
+.credit {
+  color: #fff;
+  cursor: pointer;
+  margin-left: 10px;
+  font-size: 16px;
+}

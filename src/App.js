@@ -3,6 +3,8 @@ import "./App.css";
 import Dashboard from "./screens/Dashboard";
 import Login from "./screens/Login";
 import Error from "./screens/Error";
+import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
@@ -11,17 +13,23 @@ function App() {
 
   return loggedInUser ? (
     <Router>
-      <Routes>
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="*" element={<Error />} />
-      </Routes>
+      <Navbar />
+      <div>
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
+      </div>
+      <Footer />
     </Router>
   ) : (
     <Router>
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="*" element={<Error />} />
-      </Routes>
+      <div>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
+      </div>
     </Router>
   );
 }

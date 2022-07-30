@@ -14,23 +14,16 @@ export const loginSlice = createSlice({
     loggedInUser: null,
   },
   reducers: {
-    increment: (state) => {
-      state.count += 1;
-    },
-    decrement: (state) => {
-      state.count -= 1;
-    },
-    incrementByAmount: (state, action) => {
-      state.count += action.payload;
-    },
     login: (state, action) => {
       state.loggedInUser = action.payload;
+    },
+    logout: (state) => {
+      state.loggedInUser = null;
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { increment, decrement, incrementByAmount, login } =
-  loginSlice.actions;
+export const { login, logout } = loginSlice.actions;
 
 export default loginSlice.reducer;

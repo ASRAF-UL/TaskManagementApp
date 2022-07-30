@@ -10,7 +10,7 @@ const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const { users, loggedInUser } = useSelector((state) => state.auth);
+  const { users } = useSelector((state) => state.auth);
 
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
@@ -25,10 +25,10 @@ const Login = () => {
     );
     if (payload) {
       dispatch(login(payload));
-      console.log("Logged in user: ", loggedInUser);
-      navigate("/dashboard");
+      navigate("/");
     } else {
       alert("Invalid credentials !!");
+      navigate("/");
     }
   };
   return (

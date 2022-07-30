@@ -1,0 +1,51 @@
+.navbar__items {
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  background: linear-gradient(
+    90deg,
+    rgb(94, 230, 254) 0%,
+    rgb(63, 208, 252) 100%
+  );
+}
+.navbar__logo {
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+}
+.navbar__logo h1 {
+  margin-top: 5px;
+}
+.icon {
+  height: 45px;
+  width: 45px;
+  margin-right: 15px;
+}
+.nav__menu {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-gap: 10px;
+  list-style: none;
+  text-align: center;
+  width: 70vw;
+  justify-content: end;
+  margin-right: 32px;
+}
+.nav__links {
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+}
+.nav__links:hover {
+  background-color: #6d76f7;
+  border-radius: 4px;
+  transition: all 0.2s ease-out;
+}
+.username {
+  color: #fff;
+  cursor: pointer;
+  margin-left: 10px;
+  font-size: 20px;
+}
