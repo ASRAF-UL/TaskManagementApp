@@ -1,12 +1,22 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import { deleteTask } from "../../../redux/reducer/tasksReducer";
 import "./index.css";
 
 const TaskList = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const { tasks } = useSelector((state) => state.task);
   console.log("Tasks: ", tasks);
+  const handleDelete = (id) => {
+    dispatch(
+      deleteTask({
+        id: id,
+      })
+    );
+    navigate("/tasks");
+  };
   return (
     <div className="container">
       <div className="task__list__head">
@@ -21,6 +31,7 @@ const TaskList = () => {
               <th>Title</th>
               <th>Assigned To</th>
               <th>Created At</th>
+              <th>Delete</th>
             </tr>
           </thead>
           <tbody>
@@ -45,10 +56,20 @@ const TaskList = () => {
                     <td>
                       <span>{data ? data.created_at : null}</span>
                     </td>
+                    <td>
+                      <button
+                        className="delete__item"
+                        onClick={() => handleDelete(data.id)}
+                      >
+                        Delete
+                      </button>
+                    </td>
                   </tr>
                 ))
               ) : (
                 <tr>
+                  <td>-</td>
+                  <td>-</td>
                   <td>-</td>
                   <td>-</td>
                   <td>-</td>
