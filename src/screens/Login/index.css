@@ -14,24 +14,27 @@
   margin-bottom: 15px;
   padding-bottom: 10px;
   letter-spacing: -1px;
+  color: rgb(20, 19, 19);
 }
 .login__form input {
-  min-width: 350px;
-  padding: 20px 0;
-  padding-left: 15px;
-  margin-bottom: 10px;
-  outline: none;
-  border: 1px solid rgba(0, 0, 0, 0.24);
-  border-radius: 4px;
-  font-size: 15px;
+    padding: 15px 0;
+    padding-left: 20px;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.24);
+    border-radius: 4px;
+    font-size: 15px;
+    width: 100%;
+    margin-bottom: 10px;
 }
 .submit__button {
-  padding: 17px 30px;
-  margin-top: 10px;
-  background-color: #3acbf7;
-  border: none;
-  color: white;
-  font-size: 1.2rem;
-  border-radius: 4px;
-  cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #3acbf7;
+    outline: none;
+    border: none;
+    width: 100%;
+    margin-top: 10px;
+    cursor: pointer;
 }

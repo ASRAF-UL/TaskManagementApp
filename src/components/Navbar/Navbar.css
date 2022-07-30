@@ -6,8 +6,8 @@
   font-size: 1.2rem;
   background: linear-gradient(
     90deg,
-    rgb(94, 230, 254) 0%,
-    rgb(63, 208, 252) 100%
+    rgb(48, 150, 168) 0%,
+    rgb(32, 177, 221) 100%
   );
 }
 .navbar__logo {
@@ -39,7 +39,7 @@
   padding: 8px 16px;
 }
 .nav__links:hover {
-  background-color: #6d76f7;
+  background-color: #5aaadf;
   border-radius: 4px;
   transition: all 0.2s ease-out;
 }
