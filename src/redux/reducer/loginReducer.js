@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+//Redux slice which holds all logic of login reducer
 export const loginSlice = createSlice({
   name: "auth",
   initialState: {

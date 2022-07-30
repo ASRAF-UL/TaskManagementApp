@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+//Redux slice which holds all logic of member reducer
 export const memberSlice = createSlice({
   name: "member",
   initialState: {

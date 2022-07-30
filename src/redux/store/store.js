@@ -13,20 +13,24 @@ import storage from "redux-persist/lib/storage";
 import memberReducer from "../reducer/memberReducer";
 import tasksReducer from "../reducer/tasksReducer";
 
+//Redux Persist config
 const persistConfig = {
   key: "root",
   version: 1,
   storage,
 };
+
+//Persited Reducers
 const persistedLoginReducer = persistReducer(persistConfig, loginReducer);
 const persistedMemberReducer = persistReducer(persistConfig, memberReducer);
 const persistedTaskReducer = persistReducer(persistConfig, tasksReducer);
 
+//Redux store with data persist
 export const store = configureStore({
   reducer: {
     auth: persistedLoginReducer,
-    member: memberReducer,
-    task: tasksReducer,
+    member: persistedMemberReducer,
+    task: persistedTaskReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

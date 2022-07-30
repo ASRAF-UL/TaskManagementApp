@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+//Redux slice which holds all logic of task reducer
 export const taskSlice = createSlice({
   name: "task",
   initialState: {
@@ -36,17 +37,6 @@ export const taskSlice = createSlice({
           email: "john@gmail.com",
         },
         created_at: "Saturday, July 29th, 2022, 5:46:21 PM",
-      },
-      {
-        id: 4,
-        title: "Clean garden",
-        description: "Test task 04",
-        member: {
-          id: 3,
-          name: "David",
-          email: "david@gmail.com",
-        },
-        created_at: "Saturday, July 30th, 2022, 5:46:21 PM",
       },
     ],
   },

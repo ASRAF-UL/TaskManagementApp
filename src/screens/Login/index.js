@@ -50,6 +50,7 @@ const Login = () => {
         <button type="submit" className="submit__button">
           Login
         </button>
+        <p>Username: test01 Password: test1234</p>
       </form>
     </div>
   );

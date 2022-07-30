@@ -1,8 +1,16 @@
 ## Available Scripts
 
+### `git clone repo link`
+### `npm install`
+
 In the project directory, you can run:
 
 ### `npm start`
+
+Test User:
+
+username: test01
+password: test1234
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.

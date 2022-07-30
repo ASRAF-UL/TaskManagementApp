@@ -14,6 +14,7 @@ import TaskUpdateForm from "./screens/Tasks/Update";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import MemberUpdateForm from "./screens/Member/Update";
 
+//Main layout with all routes
 function App() {
   const { loggedInUser } = useSelector((state) => state.auth);
 
