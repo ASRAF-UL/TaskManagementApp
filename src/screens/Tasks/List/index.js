@@ -30,7 +30,10 @@ const TaskList = () => {
                   <tr key={index}>
                     <td>{data ? data.id : null}</td>
                     <td>
-                      <Link className="update__task" to="/update-task">
+                      <Link
+                        className="update__task"
+                        to={`/update-task/${data.id}`}
+                      >
                         {data ? data.title : null}
                       </Link>
                     </td>

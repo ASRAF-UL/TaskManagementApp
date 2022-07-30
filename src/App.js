@@ -9,6 +9,7 @@ import TaskCreateForm from "./screens/Tasks/Create";
 import MemberCreateForm from "./screens/Member/Create";
 import TaskList from "./screens/Tasks/List";
 import MemberList from "./screens/Member/List";
+import TaskUpdateForm from "./screens/Tasks/Update";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
@@ -25,6 +26,7 @@ function App() {
           <Route path="/create-task" element={<TaskCreateForm />} />
           <Route path="/tasks" element={<TaskList />} />
           <Route path="/members" element={<MemberList />} />
+          <Route path="/update-task/:id" element={<TaskUpdateForm />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </div>

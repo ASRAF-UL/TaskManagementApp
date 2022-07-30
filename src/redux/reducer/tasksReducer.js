@@ -54,10 +54,19 @@ export const taskSlice = createSlice({
     addTask: (state, action) => {
       state.tasks.push(action.payload);
     },
+    updateTask: (state, action) => {
+      state.tasks.map((task) => {
+        if (task.id === action.payload.id) {
+          task.id = action.payload.id;
+          task.title = action.payload.title;
+          task.description = action.payload.description;
+        }
+      });
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { addTask } = taskSlice.actions;
+export const { addTask, updateTask } = taskSlice.actions;
 
 export default taskSlice.reducer;
