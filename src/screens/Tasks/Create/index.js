@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 const TaskCreateForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [selectedMember, setSelectedMember] = useState("");
+  const [selectedMember, setSelectedMember] = useState({});
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
@@ -22,7 +22,8 @@ const TaskCreateForm = () => {
     setDescription(event.target.value);
   };
   const handleMemberChange = (event) => {
-    setSelectedMember(event.target.value);
+    setSelectedMember(members[+event.target.value]);
+    console.log("seleced member: ", members[+event.target.value])
   };
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -35,7 +36,11 @@ const TaskCreateForm = () => {
           id: tasks[tasks.length - 1].id + 1,
           title,
           description,
-          member_id: selectedMember,
+          member: {
+            id: selectedMember.id,
+            name: selectedMember.name,
+            email: selectedMember.email,
+          },
           created_at: dateFormat(now, "dddd, mmmm dS, yyyy, h:MM:ss TT"),
         })
       );

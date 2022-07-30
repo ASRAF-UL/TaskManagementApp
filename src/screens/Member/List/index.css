@@ -27,6 +27,7 @@
   margin-top: 1rem;
   padding: 1.6rem;
   border-radius: 4px;
+  margin-bottom: 1rem;
 }
 table {
   border: 1px solid #ccc;
@@ -36,6 +37,8 @@ table {
   width: 100%;
   table-layout: fixed;
   color: rgb(71, 69, 69);
+  overflow-y: auto;
+  overflow-x: auto;
 }
 table tr {
   background-color: #f8f8f8;

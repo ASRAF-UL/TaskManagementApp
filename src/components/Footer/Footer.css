@@ -1,5 +1,4 @@
 .footer__items {
-  position: fixed;
   bottom: 0;
   height: 60px;
   background: linear-gradient(
@@ -11,6 +10,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: fixed;
 }
 .footer__menu {
   display: grid;

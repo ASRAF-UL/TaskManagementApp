@@ -1,9 +1,12 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 import "./index.css";
 
 const TaskList = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
+  const { tasks } = useSelector((state) => state.task);
+  console.log("Tasks: ", tasks);
   return (
     <div className="container">
       <div className="task__list__head">
@@ -14,17 +17,41 @@ const TaskList = () => {
         <table>
           <thead>
             <tr>
+              <th>Serial</th>
               <th>Title</th>
               <th>Assigned To</th>
               <th>Created At</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Coding</td>
-              <td>Asraful</td>
-              <td>29-07-2022</td>
-            </tr>
+            {tasks ? (
+              tasks.length ? (
+                tasks.map((data, index) => (
+                  <tr key={index}>
+                    <td>{data ? data.id : null}</td>
+                    <td>
+                      <Link className="update__task" to="/update-task">
+                        {data ? data.title : null}
+                      </Link>
+                    </td>
+                    <td>
+                      <span>
+                        {data ? data.member && data.member.name : null}
+                      </span>
+                    </td>
+                    <td>
+                      <span>{data ? data.created_at : null}</span>
+                    </td>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+              )
+            ) : null}
           </tbody>
         </table>
       </div>

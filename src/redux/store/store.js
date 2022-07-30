@@ -20,6 +20,7 @@ const persistConfig = {
 };
 const persistedLoginReducer = persistReducer(persistConfig, loginReducer);
 const persistedMemberReducer = persistReducer(persistConfig, memberReducer);
+const persistedTaskReducer = persistReducer(persistConfig, tasksReducer);
 
 export const store = configureStore({
   reducer: {
